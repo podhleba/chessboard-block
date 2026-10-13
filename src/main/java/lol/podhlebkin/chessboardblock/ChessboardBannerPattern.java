@@ -13,7 +13,12 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class ChessboardBannerPattern {
 
-    public static final TagKey<BannerPattern> PATTERN_ITEM_CHESSBOARD = TagKey.create(Registries.BANNER_PATTERN, ResourceLocation.withDefaultNamespace("pattern_item/chessboard"));
+    public static final TagKey<BannerPattern> PATTERN_ITEM_CHESSBOARD = create("pattern_item/chessboard");
+
+
+    private static TagKey<BannerPattern> create(String name) {
+        return TagKey.create(Registries.BANNER_PATTERN, ResourceLocation.fromNamespaceAndPath(ChessboardBlock.MOD_ID, name));
+    }
 
     public static  final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ChessboardBlock.MOD_ID);
 
