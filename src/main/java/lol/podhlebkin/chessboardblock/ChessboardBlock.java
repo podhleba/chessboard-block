@@ -25,7 +25,8 @@ public class ChessboardBlock {
     public ChessboardBlock(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
 
-        ChessboardBannerPattern.register(modEventBus);
+        Items.register(modEventBus);
+        Blocks.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
