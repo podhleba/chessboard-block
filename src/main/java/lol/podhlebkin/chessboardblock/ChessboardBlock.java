@@ -1,5 +1,6 @@
 package lol.podhlebkin.chessboardblock;
 
+import net.minecraft.world.item.Item;
 import org.slf4j.Logger;
 import com.mojang.logging.LogUtils;
 import net.neoforged.bus.api.IEventBus;
@@ -10,7 +11,7 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
-
+import net.minecraft.world.item.CreativeModeTabs;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(ChessboardBlock.MOD_ID)
@@ -27,6 +28,7 @@ public class ChessboardBlock {
 
         Items.register(modEventBus);
         Blocks.register(modEventBus);
+        CreativeTab.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
@@ -40,7 +42,6 @@ public class ChessboardBlock {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
 
     }
-
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
