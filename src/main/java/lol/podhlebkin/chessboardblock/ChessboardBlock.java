@@ -28,7 +28,7 @@ public class ChessboardBlock {
 
         Items.register(modEventBus);
         Blocks.register(modEventBus);
-        //CreativeTab.register(modEventBus);
+        CreativeTab.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);

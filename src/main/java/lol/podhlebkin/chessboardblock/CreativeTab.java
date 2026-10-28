@@ -15,12 +15,13 @@ public class CreativeTab {
 
     public static final Supplier<CreativeModeTab> CHESSBOARD_BLOCK = CREATIVE_MODE_TAB.register("chessboard_block",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(Blocks.CHESSBOARD_BLOCK.get())).title(Component.translatable("creativetab.chessboard_block"))
-                    .displayItems((parameters, output) -> {
+                    .displayItems((itemDisplayParameters, output) -> {
                         output.accept(Blocks.CHESSBOARD_BLOCK);
-                        //output.accept(Blocks.CHESSBOARD_STAIRS);
-                        //output.accept(Blocks.CHESSBOARD_SLAB);
+                        output.accept(Blocks.CHESSBOARD_STAIRS);
+                        output.accept(Blocks.CHESSBOARD_SLAB);
                         output.accept(Items.CHESSBOARD_BANNER_PATTERN);
                     }).build());
+
 
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TAB.register(eventBus);
