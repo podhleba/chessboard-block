@@ -17,9 +17,9 @@ public class CreativeTab {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(Blocks.CHESSBOARD_BLOCK.get())).title(Component.translatable("creativetab.chessboard_block"))
                     .displayItems((parameters, output) -> {
                         output.accept(Blocks.CHESSBOARD_BLOCK);
-                        output.accept(Blocks.CHESSBOARD_STAIRS);
-                        output.accept(Blocks.CHESSBOARD_SLAB);
-                        //output.accept(Items.CHESSBOARD_BANNER_PATTERN);
+                        //output.accept(Blocks.CHESSBOARD_STAIRS);
+                        //output.accept(Blocks.CHESSBOARD_SLAB);
+                        output.accept(Items.CHESSBOARD_BANNER_PATTERN);
                     }).build());
 
     public static void register(IEventBus eventBus) {
