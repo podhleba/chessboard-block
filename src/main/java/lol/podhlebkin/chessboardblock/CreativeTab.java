@@ -19,7 +19,7 @@ public class CreativeTab {
                         output.accept(Blocks.CHESSBOARD_BLOCK);
                         output.accept(Blocks.CHESSBOARD_STAIRS);
                         output.accept(Blocks.CHESSBOARD_SLAB);
-                        output.accept(Items.CHESSBOARD_BANNER_PATTERN);
+                        //output.accept(Items.CHESSBOARD_BANNER_PATTERN);
                     }).build());
 
     public static void register(IEventBus eventBus) {
