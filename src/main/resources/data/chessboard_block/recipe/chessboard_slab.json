@@ -2,9 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "chessboard_block:chessboard_block"
-    }
+    "#": [
+      "chessboard_block:chessboard_block"
+    ]
   },
   "pattern": [
     "###"

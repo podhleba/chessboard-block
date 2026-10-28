@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "minecraft:paper"
-    },
-    {
-      "item": "chessboard_block:chessboard_block"
-    }
+    "minecraft:paper",
+    "chessboard_block:chessboard_block"
   ],
   "result": {
     "count": 1,
