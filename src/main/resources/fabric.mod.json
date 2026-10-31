@@ -17,12 +17,6 @@
 	"entrypoints": {
 		"main": [
 			"lol.podhlebkin.chessboardblock.ChessboardBlock"
-		],
-		"fabric-datagen": [
-			"lol.podhlebkin.chessboardblock.ChessboardBlockDataGenerator"
-		],
-		"client": [
-			"lol.podhlebkin.chessboardblock.ChessboardBlockClient"
 		]
 	},
 	"depends": {
