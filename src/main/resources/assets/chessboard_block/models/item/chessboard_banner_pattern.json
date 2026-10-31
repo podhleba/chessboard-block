@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "chessboard_block:item/chessboard_banner_pattern"
-  }
-}

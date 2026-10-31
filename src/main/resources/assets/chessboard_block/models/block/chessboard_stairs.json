@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "chessboard_block:block/chessboard_block",
-    "side": "chessboard_block:block/chessboard_block",
-    "top": "chessboard_block:block/chessboard_block"
-  }
-}
