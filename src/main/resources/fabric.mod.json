@@ -3,13 +3,13 @@
 	"id": "chessboard_block",
 	"version": "${version}",
 	"name": "Chessboard Block",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Adds Simple building Blocks with Chessboard Pattern + Banner Pattern",
 	"authors": [
-		"Me!"
+		"Podhlebkin"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://modrinth.com/mod/chessboard-block",
+		"sources": "https://github.com/podhleba/chessboard-block/tree/Fabric-1.21.1"
 	},
 	"license": "CC-BY-4.0",
 	"icon": "assets/chessboard_block/icon.png",

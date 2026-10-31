@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "chessboard_block:block/chessboard_slab"
+    },
+    "type=double": {
+      "model": "chessboard_block:block/chessboard_block"
+    },
+    "type=top": {
+      "model": "chessboard_block:block/chessboard_slab_top"
+    }
+  }
+}
