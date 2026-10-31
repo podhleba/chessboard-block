@@ -14,6 +14,7 @@ public class ChessboardBlock implements ModInitializer {
 	public void onInitialize() {
 		Items.register();
 		Blocks.register();
+		CreativeTab.register();
 	}
 
 	public static Identifier id(String path) {
