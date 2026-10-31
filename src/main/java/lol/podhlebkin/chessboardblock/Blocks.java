@@ -4,6 +4,8 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import lol.podhlebkin.chessboardblock.ChessboardBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.SlabBlock;
+import net.minecraft.block.StairsBlock;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -15,9 +17,18 @@ import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 
 public class Blocks {
+
     public static final Block CHESSBOARD_BLOCK = registerBlock("chessboard_block",
              new Block(AbstractBlock.Settings.create()
                      .mapColor(DyeColor.LIGHT_GRAY).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.8F)));
+
+    public static final Block CHESSBOARD_STAIRS = registerBlock("chessboard_stairs",
+            new StairsBlock(CHESSBOARD_BLOCK.getDefaultState(),AbstractBlock.Settings.create()
+                    .mapColor(DyeColor.LIGHT_GRAY).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.8F)));
+
+    public static final Block CHESSBOARD_SLAB = registerBlock("chessboard_slab",
+            new SlabBlock(AbstractBlock.Settings.create()
+                    .mapColor(DyeColor.LIGHT_GRAY).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.8F)));
 
 
     private static Block registerBlock(String name, Block block) {
