@@ -1,5 +1,6 @@
 package lol.podhlebkin.chessboardblock;
 
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import org.slf4j.Logger;
 import com.mojang.logging.LogUtils;
@@ -40,7 +41,30 @@ public class ChessboardBlock {
 
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.insertBefore(
+                    net.minecraft.world.item.Items.PIGLIN_BANNER_PATTERN.getDefaultInstance(),
+                    Items.CHESSBOARD_BANNER_PATTERN.get().getDefaultInstance(),
+                    CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
+            );
+        }
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.insertBefore(
+                    net.minecraft.world.item.Items.AMETHYST_BLOCK.getDefaultInstance(),
+                    Blocks.CHESSBOARD_BLOCK.get().asItem().getDefaultInstance(),
+                    CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
+            );
+            event.insertAfter(
+                    Blocks.CHESSBOARD_BLOCK.get().asItem().getDefaultInstance(),
+                    Blocks.CHESSBOARD_STAIRS.get().asItem().getDefaultInstance(),
+                    CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
+            );
+            event.insertAfter(
+                    Blocks.CHESSBOARD_STAIRS.get().asItem().getDefaultInstance(),
+                    Blocks.CHESSBOARD_SLAB.get().asItem().getDefaultInstance(),
+                    CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
+            );
+        }
     }
 
     @SubscribeEvent
