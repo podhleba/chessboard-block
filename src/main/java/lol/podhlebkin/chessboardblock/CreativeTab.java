@@ -1,38 +1,37 @@
 package lol.podhlebkin.chessboardblock;
 
-
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemGroups;
-import net.minecraft.item.ItemStack;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
+import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 
 public class CreativeTab {
-
-    public static final ItemGroup CHESSBOARD_BLOCK = Registry.register(Registries.ITEM_GROUP,
-            Identifier.of(ChessboardBlock.MOD_ID, "chessboard_block"),
-            FabricItemGroup.builder().icon(() -> new ItemStack(Blocks.CHESSBOARD_BLOCK))
-                    .displayName(Text.translatable("creativetab.chessboard_block"))
-                    .entries((displayContext, entries) -> {
-                        entries.add(Blocks.CHESSBOARD_BLOCK);
-                        entries.add(Blocks.CHESSBOARD_STAIRS);
-                        entries.add(Blocks.CHESSBOARD_SLAB);
-                        entries.add(Items.CHESSBOARD_BANNER_PATTERN);
+    public static final CreativeModeTab CHESSBOARD_BLOCK = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
+            Identifier.fromNamespaceAndPath(ChessboardBlock.MOD_ID, "chessboard_block"),
+            FabricCreativeModeTab.builder().icon(() -> new ItemStack(Blocks.CHESSBOARD_BLOCK))
+                    .title(Component.translatable("creativetab.chessboard_block"))
+                    .displayItems((parameters, output) -> {
+                        output.accept(Blocks.CHESSBOARD_BLOCK);
+                        output.accept(Blocks.CHESSBOARD_STAIRS);
+                        output.accept(Blocks.CHESSBOARD_SLAB);
+                        output.accept(Items.CHESSBOARD_BANNER_PATTERN);
                     }).build());
 
     public static void register() {
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
-            entries.addBefore(net.minecraft.item.Items.PIGLIN_BANNER_PATTERN, Items.CHESSBOARD_BANNER_PATTERN);
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register(output -> {
+            output.insertBefore(net.minecraft.world.item.Items.PIGLIN_BANNER_PATTERN, Items.CHESSBOARD_BANNER_PATTERN);
         });
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
-            entries.addBefore(net.minecraft.item.Items.AMETHYST_BLOCK, Blocks.CHESSBOARD_BLOCK);
-            entries.addAfter(Blocks.CHESSBOARD_BLOCK, Blocks.CHESSBOARD_STAIRS);
-            entries.addAfter(Blocks.CHESSBOARD_STAIRS, Blocks.CHESSBOARD_SLAB);
+
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register(output -> {
+            output.insertBefore(net.minecraft.world.item.Items.AMETHYST_BLOCK, Blocks.CHESSBOARD_BLOCK);
+            output.insertAfter(Blocks.CHESSBOARD_BLOCK, Blocks.CHESSBOARD_STAIRS);
+            output.insertAfter(Blocks.CHESSBOARD_STAIRS, Blocks.CHESSBOARD_SLAB);
         });
     }
 }

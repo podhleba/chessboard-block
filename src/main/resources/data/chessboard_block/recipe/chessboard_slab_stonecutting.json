@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "chessboard_block:chessboard_block"
-  },
+  "ingredient": "chessboard_block:chessboard_block",
   "result": {
     "count": 2,
     "id": "chessboard_block:chessboard_slab"

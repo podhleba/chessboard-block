@@ -5,8 +5,7 @@
   "block.chessboard_block.chessboard_slab": "Шахматная плита",
   "block.chessboard_block.chessboard_stairs": "Шахматные ступеньки",
 
-  "item.chessboard_block.chessboard_banner_pattern": "Узор флага",
-  "item.chessboard_block.chessboard_banner_pattern.desc": "Шахматы",
+  "item.chessboard_block.chessboard_banner_pattern": "Узор флага «Шахматы»",
 
   "block.chessboard_block.banner.chessboard.black": "Чёрные шахматы",
   "block.chessboard_block.banner.chessboard.blue": "Синие шахматы",

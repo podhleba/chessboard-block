@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chessboard_block:block/chessboard_slab"
+  }
+}
